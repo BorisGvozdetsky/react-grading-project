@@ -5,26 +5,30 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
+import { getQuestLevel } from 'utils.js';
+import {quests} from 'mocks/mocks.js';
+
+
 
 const DetailedQuest = () => {
+  const {coverImg, title, duration, peopleCount, level, description} = quests[0];
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
   const onBookingBtnClick = () => {
     setIsBookingModalOpened(true);
   };
-
   return (
     <MainLayout>
       <S.Main>
         <S.PageImage
-          src="img/cover-maniac.jpg"
-          alt="Квест Маньяк"
+          src={`../${coverImg}`}
+          alt={`квест ${title}`}
           width="1366"
           height="768"
         />
         <S.PageContentWrapper>
           <S.PageHeading>
-            <S.PageTitle>Маньяк</S.PageTitle>
+            <S.PageTitle>{title}</S.PageTitle>
             <S.PageSubtitle>приключения</S.PageSubtitle>
           </S.PageHeading>
 
@@ -32,26 +36,21 @@ const DetailedQuest = () => {
             <S.Features>
               <S.FeaturesItem>
                 <IconClock width="20" height="20" />
-                <S.FeatureTitle>90 мин</S.FeatureTitle>
+                <S.FeatureTitle>{`${duration} мин`}</S.FeatureTitle>
               </S.FeaturesItem>
               <S.FeaturesItem>
                 <IconPerson width="19" height="24" />
-                <S.FeatureTitle>3–6 чел</S.FeatureTitle>
+                <S.FeatureTitle>
+                  {`${peopleCount.join('-')} чел`}
+                </S.FeatureTitle>
               </S.FeaturesItem>
               <S.FeaturesItem>
                 <IconPuzzle width="24" height="24" />
-                <S.FeatureTitle>средний</S.FeatureTitle>
+                <S.FeatureTitle>{getQuestLevel(level)}</S.FeatureTitle>
               </S.FeaturesItem>
             </S.Features>
 
-            <S.QuestDescription>
-              В комнате с приглушённым светом несколько человек, незнакомых друг
-              с другом, приходят в себя. Никто не помнит, что произошло прошлым
-              вечером. Руки и ноги связаным, но одному из вас получилось
-              освободиться. На стене висит пугающий таймер и запущен отстёт
-              60&nbsp;минут. Сможете ли вы разобраться в стрессовой ситуации,
-              помочь другим, разобраться что произошло и выбраться из комнаты?
-            </S.QuestDescription>
+            <S.QuestDescription>{description}</S.QuestDescription>
 
             <S.QuestBookingBtn onClick={onBookingBtnClick}>
               Забронировать

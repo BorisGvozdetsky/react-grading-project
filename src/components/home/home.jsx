@@ -14,7 +14,7 @@ const HomePage = () => (
         <PageTitle>Выберите тематику</PageTitle>
         <PageSubtext>квесты в Санкт-Петербурге</PageSubtext>
       </PageHeading>
-      <QuestsCatalog />
+      <QuestsCatalog/>
     </S.Main>
   </MainLayout>
 );
