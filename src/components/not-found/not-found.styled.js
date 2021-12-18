@@ -17,7 +17,8 @@ const NotFoundText = styled.p`
 
 const Link = styled(RouterLink)`
   color: red;
-`
+`;
+
 export {
   NotFoundWrap,
   NotFoundTitle,

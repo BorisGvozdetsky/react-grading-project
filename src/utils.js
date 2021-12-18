@@ -3,7 +3,7 @@ import {QuestLevel} from 'const.js';
 const getQuestLevel = (level) => {
   switch(level) {
     case QuestLevel.Easy:
-      return 'простой';
+      return 'легкий';
     case QuestLevel.Medium:
       return 'средний';
     case QuestLevel.Hard:
