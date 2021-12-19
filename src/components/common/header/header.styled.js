@@ -23,14 +23,6 @@ const HeaderWrapper = styled(Container)`
   padding-left: 32px;
 `;
 
-const Logo = styled.a`
-  margin-right: 250px;
-
-  @media (max-width: 1300px) {
-    margin-right: auto;
-  }
-`;
-
 const LogoLink = styled(RouterLink)`
   margin-right: 250px;
 
@@ -107,7 +99,6 @@ const Phone = styled.a`
 export {
   StyledHeader,
   HeaderWrapper,
-  Logo,
   LogoLink,
   Navigation,
   Image,

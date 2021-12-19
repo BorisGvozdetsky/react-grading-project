@@ -1,4 +1,4 @@
-import {QuestLevel} from 'const.js';
+import {QuestFilter, QuestLevel} from 'const.js';
 
 const getQuestLevel = (level) => {
   switch(level) {
@@ -12,5 +12,21 @@ const getQuestLevel = (level) => {
       return '';
   }
 };
+const getQuestFilter = (filter) => {
+  switch(filter) {
+    case QuestFilter.Horror.type:
+      return 'Ужасы';
+    case QuestFilter.Detective.type:
+      return 'Детектив';
+    case QuestFilter.Adventures.type:
+      return 'Приключения';
+    case QuestFilter.Mystic.type:
+      return 'Мистика';
+    case QuestFilter.Scifi.type:
+      return 'Sci-fi';
+    default:
+      return '';
+  }
+};
 
-export {getQuestLevel};
+export {getQuestLevel, getQuestFilter};

@@ -21,27 +21,67 @@ const QuestFilter = {
   All: {
     name: 'Все квесты',
     icon: IconAllQuests,
+    type: '',
   },
   Horror: {
     name: 'Ужасы',
     icon: IconHorrors,
+    type: 'horror',
   },
   Mystic: {
     name: 'Мистика',
     icon: IconMystic,
+    type: 'mystic',
   },
   Detective: {
     name: 'Детектив',
     icon: IconDetective,
+    type: 'detective',
   },
   Adventures: {
     name: 'Приключения',
     icon: IconAdventures,
+    type: 'adventures',
   },
   Scifi: {
     name: 'Sci-fi',
     icon: IconScifi,
+    type: 'sci-fi',
   }
 };
 
-export {QuestLevel, QuestFilter, AppRoute};
+const APIRoute = {
+  Quests: '/quests',
+  Orders: '/orders',
+};
+
+const ToastMessage = {
+  ServerFail: 'Server is not responding',
+  SendFail: 'Form was not sent, please try again',
+};
+
+const MenuType = {
+  Quests: {
+    name: 'Квесты',
+    route: AppRoute.Home,
+  },
+  Beginners: {
+    name: 'Новичкам',
+    route: '#',
+  },
+  Reviews: {
+    name: 'Отзывы',
+    route: '#',
+  },
+  Offers: {
+    name: 'Акции',
+    route: '#',
+  },
+  Contacts: {
+    name: 'Контакты',
+    route: AppRoute.Contacts,
+  },
+};
+
+
+export {QuestLevel, QuestFilter, AppRoute, APIRoute, ToastMessage, MenuType};
